@@ -1,11 +1,13 @@
-# api documentation for  [standard (v9.0.2)](http://standardjs.com)  [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-standard.svg)](https://travis-ci.org/npmdoc/node-npmdoc-standard)
+# api documentation for  [standard (v10.0.1)](https://standardjs.com)  [![npm package](https://img.shields.io/npm/v/npmdoc-standard.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-standard) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-standard.svg)](https://travis-ci.org/npmdoc/node-npmdoc-standard)
 #### JavaScript Standard Style
 
 [![NPM](https://nodei.co/npm/standard.png?downloads=true)](https://www.npmjs.com/package/standard)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-standard/build/screen-capture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-standard_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-standard/build..beta..travis-ci.org/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-standard/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-standard_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-standard/build/apidoc.html)
 
-![package-listing](https://npmdoc.github.io/node-npmdoc-standard/build/screen-capture.npmPackageListing.svg)
+![npmPackageListing](https://npmdoc.github.io/node-npmdoc-standard/build/screenCapture.npmPackageListing.svg)
+
+![npmPackageDependencyTree](https://npmdoc.github.io/node-npmdoc-standard/build/screenCapture.npmPackageDependencyTree.svg)
 
 
 
@@ -26,18 +28,21 @@
         "url": "https://github.com/feross/standard/issues"
     },
     "dependencies": {
-        "eslint": "~3.18.0",
-        "eslint-config-standard": "7.1.0",
-        "eslint-config-standard-jsx": "3.3.0",
-        "eslint-plugin-promise": "~3.4.0",
-        "eslint-plugin-react": "~6.9.0",
-        "eslint-plugin-standard": "~2.0.1",
-        "standard-engine": "~5.4.0"
+        "eslint": "~3.19.0",
+        "eslint-config-standard": "10.2.0",
+        "eslint-config-standard-jsx": "4.0.1",
+        "eslint-plugin-import": "~2.2.0",
+        "eslint-plugin-node": "~4.2.2",
+        "eslint-plugin-promise": "~3.5.0",
+        "eslint-plugin-react": "~6.10.0",
+        "eslint-plugin-standard": "~3.0.1",
+        "standard-engine": "~7.0.0"
     },
     "description": "JavaScript Standard Style",
     "devDependencies": {
         "babel-eslint": "^7.0.0",
         "cross-spawn": "^5.0.1",
+        "eslint-index": "^1.3.0",
         "minimist": "^1.2.0",
         "mkdirp": "^0.5.1",
         "run-parallel-limit": "^1.0.3",
@@ -46,14 +51,14 @@
     },
     "directories": {},
     "dist": {
-        "shasum": "9bd3b9467492e212b1914d78553943ff9b48fd99",
-        "tarball": "https://registry.npmjs.org/standard/-/standard-9.0.2.tgz"
+        "shasum": "99c1578fcca8d6f54ce8c2711f5452443e839082",
+        "tarball": "https://registry.npmjs.org/standard/-/standard-10.0.1.tgz"
     },
     "engines": {
         "node": ">=4"
     },
-    "gitHead": "ba16c406846893e8da9460170bb8f62ad9ef602c",
-    "homepage": "http://standardjs.com",
+    "gitHead": "d37028e3443d86b508f74dbb84da310b48533d00",
+    "homepage": "https://standardjs.com",
     "keywords": [
         "JavaScript Standard Style",
         "check",
@@ -159,6 +164,9 @@
         "url": "git://github.com/feross/standard.git"
     },
     "scripts": {
+        "show-rules": "eslint-index eslintrc.json",
+        "show-rules-disabled": "eslint-index eslintrc.json --status omitted off",
+        "show-summary": "eslint-index eslintrc.json --format table",
         "test": "./bin/cmd.js --verbose && tape test/*.js",
         "test-disabled": "npm test -- --disabled",
         "test-offline": "npm test -- --offline",
@@ -166,7 +174,7 @@
         "test-quick": "npm test -- --quick",
         "update-authors": "./bin/update-authors.sh"
     },
-    "version": "9.0.2"
+    "version": "10.0.1"
 }
 ```
 
@@ -2253,17 +2261,18 @@ verify = function (textOrSourceCode, config, filenameOrOptions, saveState) {
     // search and apply "eslint-env *".
     const envInFile = findEslintEnv(text || textOrSourceCode.text);
 
+    config = Object.assign({}, config);
+
     if (envInFile) {
-        if (!config || !config.env) {
-            config = Object.assign({}, config || {}, { env: envInFile });
-        } else {
-            config = Object.assign({}, config);
+        if (config.env) {
             config.env = Object.assign({}, config.env, envInFile);
+        } else {
+            config.env = envInFile;
         }
     }
 
     // process initial config to make it safe to extend
-    config = prepareConfig(config || {});
+    config = prepareConfig(config);
 
     // only do this for text
     if (text !== null) {
@@ -2352,7 +2361,10 @@ verify = function (textOrSourceCode, config, filenameOrOptions, saveState) {
             } catch (ex) {
                 ex.message = 'Error while loading rule '${key}': ${ex.message}';
                 throw ex;
-            } ...
+            }
+        });
+
+        // save config so rules can access as necess ...
 ```
 - example usage
 ```shell
