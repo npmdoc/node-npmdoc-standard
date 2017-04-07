@@ -49,9 +49,9 @@
 <h1>api documentation for
     <a
 
-        href="http://standardjs.com"
+        href="https://standardjs.com"
 
-    >standard (v9.0.2)</a>
+    >standard (v10.0.1)</a>
 </h1>
 <h4>JavaScript Standard Style</h4>
 <div class="apidocSectionDiv"><a
@@ -2988,17 +2988,18 @@ parent.type !== &#x22;Property&#x22;) {
     // search and apply &#x22;eslint-env *&#x22;.
     const envInFile = findEslintEnv(text || textOrSourceCode.text);
 
+    config = Object.assign({}, config);
+
     if (envInFile) {
-        if (!config || !config.env) {
-            config = Object.assign({}, config || {}, { env: envInFile });
-        } else {
-            config = Object.assign({}, config);
+        if (config.env) {
             config.env = Object.assign({}, config.env, envInFile);
+        } else {
+            config.env = envInFile;
         }
     }
 
     // process initial config to make it safe to extend
-    config = prepareConfig(config || {});
+    config = prepareConfig(config);
 
     // only do this for text
     if (text !== null) {
@@ -3087,7 +3088,10 @@ parent.type !== &#x22;Property&#x22;) {
             } catch (ex) {
                 ex.message = `Error while loading rule &#x27;${key}&#x27;: ${ex.message}`;
                 throw ex;
-            } ...</pre></li>
+            }
+        });
+
+        // save config so rules can access as necess ...</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 

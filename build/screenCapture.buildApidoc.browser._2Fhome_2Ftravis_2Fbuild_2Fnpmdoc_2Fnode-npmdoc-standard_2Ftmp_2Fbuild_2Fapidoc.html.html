@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://standardjs.com"
-
-    >standard (v10.0.1)</a>
+    <a href="https://standardjs.com">standard (v10.0.1)</a>
 </h1>
 <h4>JavaScript Standard Style</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.standard">module standard</a><ol>
 
@@ -804,7 +797,7 @@
     const cacheFile = getCacheFile(this.options.cacheLocation || this.options.cacheFile, this.options.cwd);
 
     /**
-     * Cache used to avoid operating on files that haven&#x27;t changed since the
+     * Cache used to avoid operating on files that haven't changed since the
      * last successful execution (e.g., file passed linting with no errors and
      * no warnings).
      * @type {Object}
@@ -815,14 +808,14 @@
     if (this.options.rulePaths) {
         const cwd = this.options.cwd;
 
-        this.options.rulePaths.forEach(rulesdir =&#x3e; {
+        this.options.rulePaths.forEach(rulesdir =&gt; {
             debug(`Loading rules from ${rulesdir}`);
             rules.load(rulesdir, cwd);
         });
     }
 
-    Object.keys(this.options.rules || {}).forEach(name =&#x3e; {
-        validator.validateRuleOptions(name, this.options.rules[name], &#x22;CLI&#x22;);
+    Object.keys(this.options.rules || {}).forEach(name =&gt; {
+        validator.validateRuleOptions(name, this.options.rules[name], "CLI");
     });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -926,7 +919,7 @@
         this[methodName] = tokenStore[methodName].bind(tokenStore);
     }
 
-    // don&#x27;t allow modification of this object
+    // don't allow modification of this object
     Object.freeze(this);
     Object.freeze(this.lines);
 }</pre></li>
@@ -979,7 +972,7 @@
     const cacheFile = getCacheFile(this.options.cacheLocation || this.options.cacheFile, this.options.cwd);
 
     /**
-     * Cache used to avoid operating on files that haven&#x27;t changed since the
+     * Cache used to avoid operating on files that haven't changed since the
      * last successful execution (e.g., file passed linting with no errors and
      * no warnings).
      * @type {Object}
@@ -990,14 +983,14 @@
     if (this.options.rulePaths) {
         const cwd = this.options.cwd;
 
-        this.options.rulePaths.forEach(rulesdir =&#x3e; {
+        this.options.rulePaths.forEach(rulesdir =&gt; {
             debug(`Loading rules from ${rulesdir}`);
             rules.load(rulesdir, cwd);
         });
     }
 
-    Object.keys(this.options.rules || {}).forEach(name =&#x3e; {
-        validator.validateRuleOptions(name, this.options.rules[name], &#x22;CLI&#x22;);
+    Object.keys(this.options.rules || {}).forEach(name =&gt; {
+        validator.validateRuleOptions(name, this.options.rules[name], "CLI");
     });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -1101,7 +1094,7 @@
         this[methodName] = tokenStore[methodName].bind(tokenStore);
     }
 
-    // don&#x27;t allow modification of this object
+    // don't allow modification of this object
     Object.freeze(this);
     Object.freeze(this.lines);
 }</pre></li>
@@ -1142,7 +1135,7 @@
     const cacheFile = getCacheFile(this.options.cacheLocation || this.options.cacheFile, this.options.cwd);
 
     /**
-     * Cache used to avoid operating on files that haven&#x27;t changed since the
+     * Cache used to avoid operating on files that haven't changed since the
      * last successful execution (e.g., file passed linting with no errors and
      * no warnings).
      * @type {Object}
@@ -1153,14 +1146,14 @@
     if (this.options.rulePaths) {
         const cwd = this.options.cwd;
 
-        this.options.rulePaths.forEach(rulesdir =&#x3e; {
+        this.options.rulePaths.forEach(rulesdir =&gt; {
             debug(`Loading rules from ${rulesdir}`);
             rules.load(rulesdir, cwd);
         });
     }
 
-    Object.keys(this.options.rules || {}).forEach(name =&#x3e; {
-        validator.validateRuleOptions(name, this.options.rules[name], &#x22;CLI&#x22;);
+    Object.keys(this.options.rules || {}).forEach(name =&gt; {
+        validator.validateRuleOptions(name, this.options.rules[name], "CLI");
     });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -1178,10 +1171,10 @@
     <li>description and source-code<pre class="apidocCodePre">getErrorResults = function (results) {
     const filtered = [];
 
-    results.forEach(result =&#x3e; {
+    results.forEach(result =&gt; {
         const filteredMessages = result.messages.filter(isErrorMessage);
 
-        if (filteredMessages.length &#x3e; 0) {
+        if (filteredMessages.length &gt; 0) {
             filtered.push(
                 Object.assign(result, {
                     messages: filteredMessages,
@@ -1211,16 +1204,16 @@
     let formatterPath;
 
     // default is stylish
-    format = format || &#x22;stylish&#x22;;
+    format = format || "stylish";
 
     // only strings are valid formatters
-    if (typeof format === &#x22;string&#x22;) {
+    if (typeof format === "string") {
 
         // replace \ with / for Windows compatibility
-        format = format.replace(/\\/g, &#x22;/&#x22;);
+        format = format.replace(/\\/g, "/");
 
-        // if there&#x27;s a slash, then it&#x27;s a file
-        if (format.indexOf(&#x22;/&#x22;) &#x3e; -1) {
+        // if there's a slash, then it's a file
+        if (format.indexOf("/") &gt; -1) {
             const cwd = this.options ? this.options.cwd : process.cwd();
 
             formatterPath = path.resolve(cwd, format);
@@ -1252,7 +1245,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">outputFixes = function (report) {
-    report.results.filter(result =&#x3e; result.hasOwnProperty(&#x22;output&#x22;)).forEach(result =&#x3e; {
+    report.results.filter(result =&gt; result.hasOwnProperty("output")).forEach(result =&gt; {
         fs.writeFileSync(result.filePath, result.output);
     });
 }</pre></li>
@@ -1308,7 +1301,7 @@
     const cacheFile = getCacheFile(this.options.cacheLocation || this.options.cacheFile, this.options.cwd);
 
     /**
-     * Cache used to avoid operating on files that haven&#x27;t changed since the
+     * Cache used to avoid operating on files that haven't changed since the
      * last successful execution (e.g., file passed linting with no errors and
      * no warnings).
      * @type {Object}
@@ -1319,14 +1312,14 @@
     if (this.options.rulePaths) {
         const cwd = this.options.cwd;
 
-        this.options.rulePaths.forEach(rulesdir =&#x3e; {
+        this.options.rulePaths.forEach(rulesdir =&gt; {
             debug(`Loading rules from ${rulesdir}`);
             rules.load(rulesdir, cwd);
         });
     }
 
-    Object.keys(this.options.rules || {}).forEach(name =&#x3e; {
-        validator.validateRuleOptions(name, this.options.rules[name], &#x22;CLI&#x22;);
+    Object.keys(this.options.rules || {}).forEach(name =&gt; {
+        validator.validateRuleOptions(name, this.options.rules[name], "CLI");
     });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -1360,7 +1353,7 @@
             prevConfig = {};
         }
 
-        // reuse the previously hashed config if the config hasn&#x27;t changed
+        // reuse the previously hashed config if the config hasn't changed
         if (prevConfig.config !== config) {
 
             /*
@@ -1408,7 +1401,7 @@
             const changed = descriptor.changed || meta.hashOfConfig !== hashOfConfig;
 
             if (!changed) {
-                debug(`Skipping file since hasn&#x27;t changed: ${filename}`);
+                debug(`Skipping file since hasn't changed: ${filename}`);
 
                 /*
                  * Add the the cached results (always will be 0 error and
@@ -1432,11 +1425,11 @@
         if (options.cache) {
 
             /*
-             * if a file contains errors or warnings we don&#x27;t want to
+             * if a file contains errors or warnings we don't want to
              * store the file in the cache so we can guarantee that
              * next execution will also operate on this file
              */
-            if (res.errorCount &#x3e; 0 || res.warningCount &#x3e; 0) {
+            if (res.errorCount &gt; 0 || res.warningCount &gt; 0) {
                 debug(`File has problems, skipping it: ${filename}`);
 
                 // remove the entry from the cache
@@ -1464,7 +1457,7 @@
     patterns = this.resolveFileGlobPatterns(patterns);
     const fileList = globUtil.listFilesToProcess(patterns, options);
 
-    fileList.forEach(fileInfo =&#x3e; {
+    fileList.forEach(fileInfo =&gt; {
         executeOnFile(fileInfo.filename, fileInfo ...</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1486,11 +1479,11 @@
         ignoredPaths = new IgnoredPaths(options);
 
     // resolve filename based on options.cwd (for reporting, ignoredPaths also resolves)
-    if (filename &#x26;&#x26; !path.isAbsolute(filename)) {
+    if (filename &amp;&amp; !path.isAbsolute(filename)) {
         filename = path.resolve(options.cwd, filename);
     }
 
-    if (filename &#x26;&#x26; ignoredPaths.contains(filename)) {
+    if (filename &amp;&amp; ignoredPaths.contains(filename)) {
         if (warnIgnored) {
             results.push(createIgnoreResult(filename, options.cwd));
         }
@@ -1540,16 +1533,16 @@
     let formatterPath;
 
     // default is stylish
-    format = format || &#x22;stylish&#x22;;
+    format = format || "stylish";
 
     // only strings are valid formatters
-    if (typeof format === &#x22;string&#x22;) {
+    if (typeof format === "string") {
 
         // replace \ with / for Windows compatibility
-        format = format.replace(/\\/g, &#x22;/&#x22;);
+        format = format.replace(/\\/g, "/");
 
-        // if there&#x27;s a slash, then it&#x27;s a file
-        if (format.indexOf(&#x22;/&#x22;) &#x3e; -1) {
+        // if there's a slash, then it's a file
+        if (format.indexOf("/") &gt; -1) {
             const cwd = this.options ? this.options.cwd : process.cwd();
 
             formatterPath = path.resolve(cwd, format);
@@ -1711,8 +1704,8 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">setDefaultConfig = function (config) {
-    if (typeof config !== &#x22;object&#x22;) {
-        throw new Error(&#x22;RuleTester.setDefaultConfig: config must be an object&#x22;);
+    if (typeof config !== "object") {
+        throw new Error("RuleTester.setDefaultConfig: config must be an object");
     }
     defaultConfig = config;
 
@@ -1754,24 +1747,24 @@
     <li>description and source-code<pre class="apidocCodePre">run(ruleName, rule, test) {
 
     const testerConfig = this.testerConfig,
-        requiredScenarios = [&#x22;valid&#x22;, &#x22;invalid&#x22;],
+        requiredScenarios = ["valid", "invalid"],
         scenarioErrors = [],
         result = {};
 
-    if (lodash.isNil(test) || typeof test !== &#x22;object&#x22;) {
+    if (lodash.isNil(test) || typeof test !== "object") {
         throw new Error(`Test Scenarios for rule ${ruleName} : Could not find test scenario object`);
     }
 
-    requiredScenarios.forEach(scenarioType =&#x3e; {
+    requiredScenarios.forEach(scenarioType =&gt; {
         if (lodash.isNil(test[scenarioType])) {
             scenarioErrors.push(`Could not find any ${scenarioType} test scenarios`);
         }
     });
 
-    if (scenarioErrors.length &#x3e; 0) {
+    if (scenarioErrors.length &gt; 0) {
         throw new Error([
             `Test Scenarios for rule ${ruleName} is invalid:`
-        ].concat(scenarioErrors).join(&#x22;\n&#x22;));
+        ].concat(scenarioErrors).join("\n"));
     }
 
 <span class="apidocCodeCommentSpan">    /* eslint-disable no-shadow */
@@ -1787,7 +1780,7 @@
         let config = lodash.cloneDeep(testerConfig),
             code, filename, beforeAST, afterAST;
 
-        if (typeof item === &#x22;string&#x22;) {
+        if (typeof item === "string") {
             code = item;
         } else {
             code = item.code;
@@ -1827,11 +1820,11 @@
             if (validateSchema.errors) {
                 throw new Error([
                     `Schema for rule ${ruleName} is invalid:`
-                ].concat(validateSchema.errors.map(error =&#x3e; `\t${error.field}: ${error.message}`)).join(&#x22;\n&#x22;));
+                ].concat(validateSchema.errors.map(error =&gt; `\t${error.field}: ${error.message}`)).join("\n"));
             }
         }
 
-        validator.validate(config, &#x22;rule-tester&#x22;);
+        validator.validate(config, "rule-tester");
 
         /*
          * Setup AST getters.
@@ -1840,11 +1833,11 @@
          */
         eslint.reset();
 
-        eslint.on(&#x22;Program&#x22;, node =&#x3e; {
+        eslint.on("Program", node =&gt; {
             beforeAST = cloneDeeplyExcludesParent(node);
         });
 
-        eslint.on(&#x22;Program:exit&#x22;, node =&#x3e; {
+        eslint.on("Program:exit", node =&gt; {
             afterAST = node;
         });
 
@@ -1855,7 +1848,7 @@
             rules.get = function(ruleId) {
                 const rule = originalGet(ruleId);
 
-                if (typeof rule === &#x22;function&#x22;) {
+                if (typeof rule === "function") {
                     return function(context) {
                         Object.freeze(context);
                         freezeDeeply(context.options);
@@ -1959,7 +1952,7 @@
         this[methodName] = tokenStore[methodName].bind(tokenStore);
     }
 
-    // don&#x27;t allow modification of this object
+    // don't allow modification of this object
     Object.freeze(this);
     Object.freeze(this.lines);
 }</pre></li>
@@ -2052,7 +2045,7 @@
         this[methodName] = tokenStore[methodName].bind(tokenStore);
     }
 
-    // don&#x27;t allow modification of this object
+    // don't allow modification of this object
     Object.freeze(this);
     Object.freeze(this.lines);
 }</pre></li>
@@ -2089,11 +2082,11 @@
     const trailingComments = node.trailingComments || [];
 
 <span class="apidocCodeCommentSpan">    /*
-     * espree adds a &#x22;comments&#x22; array on Program nodes rather than
+     * espree adds a "comments" array on Program nodes rather than
      * leadingComments/trailingComments. Comments are only left in the
      * Program node comments array if there is no executable code.
      */
-</span>    if (node.type === &#x22;Program&#x22;) {
+</span>    if (node.type === "Program") {
         if (node.body.length === 0) {
             leadingComments = node.comments;
         }
@@ -2117,15 +2110,15 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getIndexFromLoc(loc) {
-    if (typeof loc !== &#x22;object&#x22; || typeof loc.line !== &#x22;number&#x22; || typeof loc.column !== &#x22;number&#x22;) {
-        throw new TypeError(&#x22;Expected `loc` to be an object with numeric `line` and `column` properties.&#x22;);
+    if (typeof loc !== "object" || typeof loc.line !== "number" || typeof loc.column !== "number") {
+        throw new TypeError("Expected `loc` to be an object with numeric `line` and `column` properties.");
     }
 
-    if (loc.line &#x3c;= 0) {
+    if (loc.line &lt;= 0) {
         throw new RangeError(`Line number out of range (line ${loc.line} requested). Line numbers should be 1-based.`);
     }
 
-    if (loc.line &#x3e; this.lineStartIndices.length) {
+    if (loc.line &gt; this.lineStartIndices.length) {
         throw new RangeError(`Line number out of range (line ${loc.line} requested, but only ${this.lineStartIndices.length} lines
  present).`);
     }
@@ -2143,8 +2136,8 @@
      * use getIndexFromLoc consistently without worrying about edge cases at the end of a file.
      */
 </span>    if (
-        loc.line === this.lineStartIndices.length &#x26;&#x26; positionIndex &#x3e; lineEndIndex ||
-        loc.line &#x3c; this.lineStartIndices.length &#x26;&#x26; positionIndex &#x3e;= lineEndIndex
+        loc.line === this.lineStartIndices.length &amp;&amp; positionIndex &gt; lineEndIndex ||
+        loc.line &lt; this.lineStartIndices.length &amp;&amp; positionIndex &gt;= lineEndIndex
     ) {
         throw new RangeError(`Column number out of range (column ${loc.column} requested, but the length of line ${loc.line} is ${
 lineEndIndex - lineStartIndex}).`);
@@ -2169,26 +2162,26 @@ lineEndIndex - lineStartIndex}).`);
     let parent = node.parent;
 
     switch (node.type) {
-        case &#x22;ClassDeclaration&#x22;:
-        case &#x22;FunctionDeclaration&#x22;:
+        case "ClassDeclaration":
+        case "FunctionDeclaration":
             if (looksLikeExport(parent)) {
                 return findJSDocComment(parent.leadingComments, parent.loc.start.line);
             }
             return findJSDocComment(node.leadingComments, node.loc.start.line);
 
-        case &#x22;ClassExpression&#x22;:
+        case "ClassExpression":
             return findJSDocComment(parent.parent.leadingComments, parent.parent.loc.start.line);
 
-        case &#x22;ArrowFunctionExpression&#x22;:
-        case &#x22;FunctionExpression&#x22;:
+        case "ArrowFunctionExpression":
+        case "FunctionExpression":
 
-            if (parent.type !== &#x22;CallExpression&#x22; &#x26;&#x26; parent.type !== &#x22;NewExpression&#x22;) {
-                while (parent &#x26;&#x26; !parent.leadingComments &#x26;&#x26; !/Function/.test(parent.type) &#x26;&#x26; parent.type !== &#x22;MethodDefinition&#x22; &#x26;&#x26;
-parent.type !== &#x22;Property&#x22;) {
+            if (parent.type !== "CallExpression" &amp;&amp; parent.type !== "NewExpression") {
+                while (parent &amp;&amp; !parent.leadingComments &amp;&amp; !/Function/.test(parent.type) &amp;&amp; parent.type !== "MethodDefinition" &amp;&amp;
+parent.type !== "Property") {
                     parent = parent.parent;
                 }
 
-                return parent &#x26;&#x26; (parent.type !== &#x22;FunctionDeclaration&#x22;) ? findJSDocComment(parent.leadingComments, parent.loc.start
+                return parent &amp;&amp; (parent.type !== "FunctionDeclaration") ? findJSDocComment(parent.leadingComments, parent.loc.start
 .line) : null;
             } else if (node.leadingComments) {
                 return findJSDocComment(node.leadingComments, node.loc.start.line);
@@ -2228,16 +2221,16 @@ parent.type !== &#x22;Property&#x22;) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getLocFromIndex(index) {
-    if (typeof index !== &#x22;number&#x22;) {
-        throw new TypeError(&#x22;Expected `index` to be a number.&#x22;);
+    if (typeof index !== "number") {
+        throw new TypeError("Expected `index` to be a number.");
     }
 
-    if (index &#x3c; 0 || index &#x3e; this.text.length) {
+    if (index &lt; 0 || index &gt; this.text.length) {
         throw new RangeError(`Index out of range (requested index ${index}, but source text has length ${this.text.length}).`);
     }
 
 <span class="apidocCodeCommentSpan">    /*
-     * For an argument of this.text.length, return the location one &#x22;spot&#x22; past the last character
+     * For an argument of this.text.length, return the location one "spot" past the last character
      * of the file. If the last character is a linebreak, the location will be column 0 of the next
      * line; otherwise, the location will be in the next column on the same line.
      *
@@ -2275,7 +2268,7 @@ parent.type !== &#x22;Property&#x22;) {
 
     traverser.traverse(this.ast, {
         enter(node, parent) {
-            if (node.range[0] &#x3c;= index &#x26;&#x26; index &#x3c; node.range[1]) {
+            if (node.range[0] &lt;= index &amp;&amp; index &lt; node.range[1]) {
                 result = node;
                 resultParent = parent;
             } else {
@@ -2327,7 +2320,7 @@ parent.type !== &#x22;Property&#x22;) {
     <li>description and source-code<pre class="apidocCodePre">isSpaceBetweenTokens(first, second) {
     const text = this.text.slice(first.range[1], second.range[0]);
 
-    return /\s/.test(text.replace(/\/\*.*?\*\//g, &#x22;&#x22;));
+    return /\s/.test(text.replace(/\/\*.*?\*\//g, ""));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2347,7 +2340,7 @@ parent.type !== &#x22;Property&#x22;) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">defaults = function () {
-    return require(&#x22;../conf/eslint-recommended&#x22;);
+    return require("../conf/eslint-recommended");
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2377,7 +2370,7 @@ parent.type !== &#x22;Property&#x22;) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">defineRules = function (rulesToDefine) {
-    Object.getOwnPropertyNames(rulesToDefine).forEach(ruleId =&#x3e; {
+    Object.getOwnPropertyNames(rulesToDefine).forEach(ruleId =&gt; {
         defineRule(ruleId, rulesToDefine[ruleId]);
     });
 }</pre></li>
@@ -2445,7 +2438,7 @@ parent.type !== &#x22;Property&#x22;) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getDeclaredVariables = function (node) {
-    return (scopeManager &#x26;&#x26; scopeManager.getDeclaredVariables(node)) || [];
+    return (scopeManager &amp;&amp; scopeManager.getDeclaredVariables(node)) || [];
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2460,10 +2453,10 @@ parent.type !== &#x22;Property&#x22;) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getFilename = function () {
-    if (typeof currentFilename === &#x22;string&#x22;) {
+    if (typeof currentFilename === "string") {
         return currentFilename;
     }
-    return &#x22;&#x3c;input&#x3e;&#x22;;
+    return "&lt;input&gt;";
 
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2604,31 +2597,31 @@ parent.type !== &#x22;Property&#x22;) {
     <li>description and source-code<pre class="apidocCodePre">getScope = function () {
     const parents = traverser.parents();
 
-    // Don&#x27;t do this for Program nodes - they have no parents
+    // Don't do this for Program nodes - they have no parents
     if (parents.length) {
 
         // if current node introduces a scope, add it to the list
         const current = traverser.current();
 
-        if (currentConfig.parserOptions.ecmaVersion &#x3e;= 6) {
-            if ([&#x22;BlockStatement&#x22;, &#x22;SwitchStatement&#x22;, &#x22;CatchClause&#x22;, &#x22;FunctionDeclaration&#x22;, &#x22;FunctionExpression&#x22;, &#x22;ArrowFunctionExpression
-&#x22;].indexOf(current.type) &#x3e;= 0) {
+        if (currentConfig.parserOptions.ecmaVersion &gt;= 6) {
+            if (["BlockStatement", "SwitchStatement", "CatchClause", "FunctionDeclaration", "FunctionExpression", "ArrowFunctionExpression
+"].indexOf(current.type) &gt;= 0) {
                 parents.push(current);
             }
         } else {
-            if ([&#x22;FunctionDeclaration&#x22;, &#x22;FunctionExpression&#x22;, &#x22;ArrowFunctionExpression&#x22;].indexOf(current.type) &#x3e;= 0) {
+            if (["FunctionDeclaration", "FunctionExpression", "ArrowFunctionExpression"].indexOf(current.type) &gt;= 0) {
                 parents.push(current);
             }
         }
 
-        // Ascend the current node&#x27;s parents
-        for (let i = parents.length - 1; i &#x3e;= 0; --i) {
+        // Ascend the current node's parents
+        for (let i = parents.length - 1; i &gt;= 0; --i) {
 
             // Get the innermost scope
             const scope = scopeManager.acquire(parents[i], true);
 
             if (scope) {
-                if (scope.type === &#x22;function-expression-name&#x22;) {
+                if (scope.type === "function-expression-name") {
                     return scope.childScopes[0];
                 }
                 return scope;
@@ -2831,21 +2824,21 @@ parent.type !== &#x22;Property&#x22;) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">markVariableAsUsed = function (name) {
-    const hasGlobalReturn = currentConfig.parserOptions.ecmaFeatures &#x26;&#x26; currentConfig.parserOptions.ecmaFeatures.globalReturn,
-        specialScope = hasGlobalReturn || currentConfig.parserOptions.sourceType === &#x22;module&#x22;;
+    const hasGlobalReturn = currentConfig.parserOptions.ecmaFeatures &amp;&amp; currentConfig.parserOptions.ecmaFeatures.globalReturn,
+        specialScope = hasGlobalReturn || currentConfig.parserOptions.sourceType === "module";
     let scope = this.getScope(),
         i,
         len;
 
     // Special Node.js scope means we need to start one level deeper
-    if (scope.type === &#x22;global&#x22; &#x26;&#x26; specialScope) {
+    if (scope.type === "global" &amp;&amp; specialScope) {
         scope = scope.childScopes[0];
     }
 
     do {
         const variables = scope.variables;
 
-        for (i = 0, len = variables.length; i &#x3c; len; i++) {
+        for (i = 0, len = variables.length; i &lt; len; i++) {
             if (variables[i].name === name) {
                 variables[i].eslintUsed = true;
                 return true;
@@ -2869,11 +2862,11 @@ parent.type !== &#x22;Property&#x22;) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">report = function (ruleId, severity, node, location, message, opts, fix, meta) {
     if (node) {
-        assert.strictEqual(typeof node, &#x22;object&#x22;, &#x22;Node must be an object&#x22;);
+        assert.strictEqual(typeof node, "object", "Node must be an object");
     }
 
-    if (typeof location === &#x22;string&#x22;) {
-        assert.ok(node, &#x22;Node must be provided when reporting error if location is not provided&#x22;);
+    if (typeof location === "string") {
+        assert.ok(node, "Node must be provided when reporting error if location is not provided");
 
         meta = fix;
         fix = opts;
@@ -2892,12 +2885,12 @@ parent.type !== &#x22;Property&#x22;) {
     }
 
     if (opts) {
-        message = message.replace(/\{\{\s*([^{}]+?)\s*\}\}/g, (fullMatch, term) =&#x3e; {
+        message = message.replace(/\{\{\s*([^{}]+?)\s*\}\}/g, (fullMatch, term) =&gt; {
             if (term in opts) {
                 return opts[term];
             }
 
-            // Preserve old behavior: If parameter name not provided, don&#x27;t replace it.
+            // Preserve old behavior: If parameter name not provided, don't replace it.
             return fullMatch;
         });
     }
@@ -2908,8 +2901,8 @@ parent.type !== &#x22;Property&#x22;) {
         message,
         line: location.line,
         column: location.column + 1,   // switch to 1-base instead of 0-base
-        nodeType: node &#x26;&#x26; node.type,
-        source: sourceCode.lines[location.line - 1] || &#x22;&#x22;
+        nodeType: node &amp;&amp; node.type,
+        source: sourceCode.lines[location.line - 1] || ""
     };
 
     // Define endLine and endColumn if exists.
@@ -2918,12 +2911,12 @@ parent.type !== &#x22;Property&#x22;) {
         problem.endColumn = endLocation.column + 1;   // switch to 1-base instead of 0-base
     }
 
-    // ensure there&#x27;s range and text properties, otherwise it&#x27;s not a valid fix
-    if (fix &#x26;&#x26; Array.isArray(fix.range) &#x26;&#x26; (typeof fix.text === &#x22;string&#x22;)) {
+    // ensure there's range and text properties, otherwise it's not a valid fix
+    if (fix &amp;&amp; Array.isArray(fix.range) &amp;&amp; (typeof fix.text === "string")) {
 
         // If rule uses fix, has metadata, but has no metadata.fixable, we should throw
-        if (meta &#x26;&#x26; !meta.fixable) {
-            throw new Error(&#x22;Fixable rules should export a `meta.fixable` property.&#x22;);
+        if (meta &amp;&amp; !meta.fixable) {
+            throw new Error("Fixable rules should export a `meta.fixable` property.");
         }
 
         problem.fix = fix;
@@ -2966,14 +2959,14 @@ parent.type !== &#x22;Property&#x22;) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">verify = function (textOrSourceCode, config, filenameOrOptions, saveState) {
-    const text = (typeof textOrSourceCode === &#x22;string&#x22;) ? textOrSourceCode : null;
+    const text = (typeof textOrSourceCode === "string") ? textOrSourceCode : null;
     let ast,
         parseResult,
         shebang,
         allowInlineConfig;
 
     // evaluate arguments
-    if (typeof filenameOrOptions === &#x22;object&#x22;) {
+    if (typeof filenameOrOptions === "object") {
         currentFilename = filenameOrOptions.filename;
         allowInlineConfig = filenameOrOptions.allowInlineConfig;
         saveState = filenameOrOptions.saveState;
@@ -2985,7 +2978,7 @@ parent.type !== &#x22;Property&#x22;) {
         this.reset();
     }
 
-    // search and apply &#x22;eslint-env *&#x22;.
+    // search and apply "eslint-env *".
     const envInFile = findEslintEnv(text || textOrSourceCode.text);
 
     config = Object.assign({}, config);
@@ -3004,14 +2997,14 @@ parent.type !== &#x22;Property&#x22;) {
     // only do this for text
     if (text !== null) {
 
-        // there&#x27;s no input, just exit here
+        // there's no input, just exit here
         if (text.trim().length === 0) {
             sourceCode = new SourceCode(text, blankScriptAST);
             return messages;
         }
 
         parseResult = parse(
-            stripUnicodeBOM(text).replace(/^#!([^\r\n]+)/, (match, captured) =&#x3e; {
+            stripUnicodeBOM(text).replace(/^#!([^\r\n]+)/, (match, captured) =&gt; {
                 shebang = captured;
                 return `//${captured}`;
             }),
@@ -3020,7 +3013,7 @@ parent.type !== &#x22;Property&#x22;) {
         );
 
         // if this result is from a parseForESLint() method, normalize
-        if (parseResult &#x26;&#x26; parseResult.ast) {
+        if (parseResult &amp;&amp; parseResult.ast) {
             ast = parseResult.ast;
         } else {
             ast = parseResult;
@@ -3036,7 +3029,7 @@ parent.type !== &#x22;Property&#x22;) {
         ast = sourceCode.ast;
     }
 
-    // if espree failed to parse the file, there&#x27;s no sense in setting up rules
+    // if espree failed to parse the file, there's no sense in setting up rules
     if (ast) {
 
         // parse global comments and modify config
@@ -3048,7 +3041,7 @@ parent.type !== &#x22;Property&#x22;) {
         ConfigOps.normalize(config);
 
         // enable appropriate rules
-        Object.keys(config.rules).filter(key =&#x3e; getRuleSeverity(config.rules[key]) &#x3e; 0).forEach(key =&#x3e; {
+        Object.keys(config.rules).filter(key =&gt; getRuleSeverity(config.rules[key]) &gt; 0).forEach(key =&gt; {
             let ruleCreator;
 
             ruleCreator = rules.get(key);
@@ -3059,7 +3052,7 @@ parent.type !== &#x22;Property&#x22;) {
                 if (replacementMsg) {
                     ruleCreator = createStubRule(replacementMsg);
                 } else {
-                    ruleCreator = createStubRule(`Definition for rule &#x27;${key}&#x27; was not found`);
+                    ruleCreator = createStubRule(`Definition for rule '${key}' was not found`);
                 }
                 rules.define(key, ruleCreator);
             }
@@ -3072,21 +3065,21 @@ parent.type !== &#x22;Property&#x22;) {
                     key, api, severity, options,
                     config.settings, config.parserOptions, config.parser,
                     ruleCreator.meta,
-                    (parseResult &#x26;&#x26; parseResult.services ? parseResult.services : {})
+                    (parseResult &amp;&amp; parseResult.services ? parseResult.services : {})
                 );
 
                 const rule = ruleCreator.create ? ruleCreator.create(ruleContext)
                     : ruleCreator(ruleContext);
 
                 // add all the selectors from the rule as listeners
-                Object.keys(rule).forEach(selector =&#x3e; {
+                Object.keys(rule).forEach(selector =&gt; {
                     api.on(selector, timing.enabled
                         ? timing.time(key, rule[selector])
                         : rule[selector]
                     );
                 });
             } catch (ex) {
-                ex.message = `Error while loading rule &#x27;${key}&#x27;: ${ex.message}`;
+                ex.message = `Error while loading rule '${key}': ${ex.message}`;
                 throw ex;
             }
         });
@@ -3108,3 +3101,4 @@ parent.type !== &#x22;Property&#x22;) {
     ]
 </div>
 </div>
+</body></html>
